@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--  meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <!--Favico-->
+    <link rel="shortcut icon" href="asset/logo.png" type="image/x-icon">
+    <!--alert sweent -js--->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!--Title web-->
+    <title>books</title>
+    <!--custom css-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body id="body">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-One bg-dark ml-auto">
+            <div class="container">
+                <a class="navbar-brand" href="#">Books</a>
+                <img src="asset/logo.png" height="50px" alt="Logo">
+            </div>
+            </button>
+        </nav>
+    </header>
+
+    <main class="container py-4">
+
+        <div class="spinner">
+            <div class="sk-chase d-none" id="spinner">
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+            </div>
+        </div>
+
+        <section class="row">
+
+            <article class="col-12 mb-5" id="article1">
+                <div class="form shadow">
+                    <div class="text-center text-white bg-dark p-2">
+                        <h4>book management</h4>
+                    </div>
+                    <form class="bg-white bg-white  p-3" id="form" name="form">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" name="Title" id="Title" class="form-control" autocomplete="off"
+                                placeholder="Title to the book" pattern="[A-Za-z0-9 ]{1,25}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Author</label>
+                            <input type="text" name="Author" id="Author" class="form-control" autocomplete="off"
+                                placeholder="Author to the book" pattern="[A-Za-z ]{1,25}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" name="Description" id="Description" rows="3"
+                                placeholder="write one the description of the book" pattern="[A-Za-z0-9 ]{1,100}"
+                                required maxlength="90"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>pinture</label>
+                            <input type="file" name="pinture" id="pinture" class="form-control p-1" required>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-success w-50" type="submit" id="btn__Add">
+                                <i class="bi bi-file-earmark-plus"></i> add book
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </article>
+
+            <article class="col-12 card-columns" id="article2">
+                <!--  generar html con js -->
+            </article>
+
+        </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update data to book</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="form2" id="form2">
+                            <id id="valor"></id>
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" name="Title" id="Title2" class="form-control" autocomplete="off"
+                                    placeholder="Title to the book" pattern="[A-Za-z0-9 ]{1,25}" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Author</label>
+                                <input type="text" name="Author" id="Author2" class="form-control" autocomplete="off"
+                                    placeholder="Author to the book" pattern="[A-Za-z ]{1,25}" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="form-control" name="Description" id="Description2" rows="3"
+                                    placeholder="write one the description of the book" pattern="[A-Za-z0-9 ]{1,100}" maxlength="90" 
+                                    required></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-One bg-dark">
+        <div class="footer-copyright text-center text-white p-3">
+            <a href="https://github.com/MalfurionStormrage" id="link__Gihtub" target="_blanck">
+                <p>Github</p>
+            </a>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <!--custom js-->
+</body>
+
+</html>
